@@ -1,0 +1,18 @@
+sudo: required
+language: generic
+services:
+  - docker
+before_install:
+  - docker pull "${DOCKER_IMAGE:?}"
+script:
+  - while true; do sleep 300; echo ALIVE; done &
+  - P=$!
+  - docker run -t --entrypoint "/bin/sh" -e "USE_CCACHE=1" -e "BRANCH_NAME=cm-14.1" -e "DEVICE_LIST=cedric" -e "DEBUG=false" -e "WITH_SU=false" -v "${HOME:?}/source:/srv/src" -v "${HOME:?}/ccache:/srv/ccache" -v "${HOME:?}/zips:/srv/zips" -v "${HOME:?}/local_manifests:/srv/local_manifests" "${DOCKER_IMAGE:?}" -c "ccache -M 50G && /root/build.sh"
+  - kill ${P:?}
+  - ls ~/source
+  - ls ~/ccache
+  - ls ~/zips
+  - ls ~/local_manifests
+env:
+  global:
+    - DOCKER_IMAGE=julianxhokaxhiu/docker-lineage-cicd
