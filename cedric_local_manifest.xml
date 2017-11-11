@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!--
+      References:
+      * https://github.com/LineageOS/mirror/blob/d24a95f0d2b42317d906695843dfbc5725254408/default.xml#L9
+      * https://github.com/LineageOS/android/blob/038421c37764e23afcd8dcc65def3bd3eff2e3dd/default.xml#L4-L6
+      * https://github.com/LineageOS/android/blob/038421c37764e23afcd8dcc65def3bd3eff2e3dd/default.xml#L16-L19
+  -->
+  <remote  name="github"
+           fetch=".." />
+  <default revision="cm-14.1"
+           remote="github"
+           sync-c="true"
+           sync-j="4" />
+  <!--
+      References:
+      * https://forum.xda-developers.com/g5/development/7-1-x-lineageos-14-1-moto-g5-t3611973
+        * https://github.com/Wzedlare/android_device_motorola_cedric
+        * https://github.com/Wzedlare/android_kernel_motorola_msm8937
+        * https://github.com/Wzedlare/android_vendor_motorola_cedric
+      * https://github.com/LineageOS/mirror/blob/d24a95f0d2b42317d906695843dfbc5725254408/default.xml#L348
+  -->
+  <project name="Wzedlare/android_device_motorola_cedric" />
+  <project name="Wzedlare/android_kernel_motorola_msm8937" />
+  <project name="Wzedlare/android_vendor_motorola_cedric" />
+
+</manifest>
+
+<!--
+    References for repo manifest and local manifest format:
+    * https://gerrit.googlesource.com/git-repo/+/master/docs/manifest-format.txt
+    * https://source.android.com/source/using-repo#init
+    * https://forum.xda-developers.com/showthread.php?t=2329228
+-->

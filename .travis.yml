@@ -5,6 +5,8 @@ services:
 before_install:
   - docker pull "${DOCKER_IMAGE:?}"
 script:
+  - mkdir ~/local_manifests
+  - cp -p ./cedric_local_manifest.xml ~/local_manifests/
   - while true; do sleep 300; echo ALIVE; done &
   - P=$!
   - docker run -t --entrypoint "/bin/sh" -e "USE_CCACHE=1" -e "BRANCH_NAME=cm-14.1" -e "DEVICE_LIST=cedric" -e "DEBUG=false" -e "WITH_SU=false" -v "${HOME:?}/source:/srv/src" -v "${HOME:?}/ccache:/srv/ccache" -v "${HOME:?}/zips:/srv/zips" -v "${HOME:?}/local_manifests:/srv/local_manifests" "${DOCKER_IMAGE:?}" -c "ccache -M 50G && /root/build.sh"
