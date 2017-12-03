@@ -5,7 +5,8 @@ DOCKER_IMAGE = julianxhokaxhiu/docker-lineage-cicd
 
 .PHONY: build
 build:
-	docker run -t \
+	docker -D -l debug pull $(DOCKER_IMAGE)
+	docker -D run -t \
 		--entrypoint "/bin/sh" \
 		-e "USE_CCACHE=1" \
 		-e "BRANCH_NAME=cm-14.1" \
