@@ -11,7 +11,7 @@ build:
 		-e "USE_CCACHE=1" \
 		-e "BRANCH_NAME=cm-14.1" \
 		-e "DEVICE_LIST=cedric" \
-		-e "DEBUG=false" \
+		-e "DEBUG=true" \
 		-e "WITH_SU=false" \
 		-v "$(CURDIR)/source:/srv/src" \
 		-v "$(CURDIR)/ccache:/srv/ccache" \
