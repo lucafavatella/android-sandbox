@@ -12,10 +12,13 @@
   <remote  name="github"
            fetch=".." />
   -->
+  <!--
+      Commented for avoiding error `fatal: duplicate default in /srv/src/.repo/manifest.xml`.
   <default revision="cm-14.1"
            remote="github"
            sync-c="true"
            sync-j="4" />
+  -->
   <!--
       References:
       * https://forum.xda-developers.com/g5/development/7-1-x-lineageos-14-1-moto-g5-t3611973
