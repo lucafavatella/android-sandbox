@@ -7,8 +7,11 @@
       * https://github.com/LineageOS/android/blob/038421c37764e23afcd8dcc65def3bd3eff2e3dd/default.xml#L4-L6
       * https://github.com/LineageOS/android/blob/038421c37764e23afcd8dcc65def3bd3eff2e3dd/default.xml#L16-L19
   -->
+  <!--
+      Commented for avoiding error `fatal: remote github already exists with different attributes`.
   <remote  name="github"
            fetch=".." />
+  -->
   <default revision="cm-14.1"
            remote="github"
            sync-c="true"
