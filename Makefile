@@ -28,4 +28,4 @@ test:
 	docker -D run -t \
 		$(DI) \
 		"bash" \
-		-c "apt-get update && apt-get install -y repo"
+		-c "sed -i -e 's/ main^/ main contrib/' /etc/apt/sources.list && apt-get update && apt-get install -y repo"
