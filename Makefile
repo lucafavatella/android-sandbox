@@ -18,6 +18,7 @@ build:
 		-v "$(CURDIR)/zips:/srv/zips" \
 		-v "$(CURDIR)/local_manifests:/srv/local_manifests" \
 		$(DOCKER_IMAGE) \
+		"bash"
 		-c "ccache -M 50G && /root/build.sh"
 
 DI = debian:stretch-slim
