@@ -19,14 +19,3 @@ build:
 		-v "$(CURDIR)/local_manifests:/srv/local_manifests" \
 		$(DOCKER_IMAGE) \
 		-c "ccache -M 50G && /root/build.sh"
-
-DI = debian:stretch-slim
-
-.PHONY: test
-test:
-	docker -D -l debug pull $(DI)
-	docker -D run -t \
-		--name cedric-test \
-		$(DI) \
-		"bash" \
-		-c "sed -i -e 's/ main$$/ main contrib/' /etc/apt/sources.list && apt-get update && apt-get install -y repo"
