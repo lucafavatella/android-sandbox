@@ -5,7 +5,6 @@ DOCKER_IMAGE = eaf36f8f21d3
 
 .PHONY: build
 build:
-	docker -D -l debug pull $(DOCKER_IMAGE)
 	docker -D run -t \
 		--entrypoint "/bin/sh" \
 		-e "USE_CCACHE=1" \
