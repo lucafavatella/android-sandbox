@@ -26,6 +26,7 @@ DI = debian:stretch-slim
 test:
 	docker -D -l debug pull $(DI)
 	docker -D run -t \
+		--name cedric-test \
 		$(DI) \
 		"bash" \
 		-c "sed -i -e 's/ main$$/ main contrib/' /etc/apt/sources.list && apt-get update && apt-get install -y repo"
