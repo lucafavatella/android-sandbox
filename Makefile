@@ -1,7 +1,7 @@
 .PHONY: all
 all: build
 
-DOCKER_IMAGE = julianxhokaxhiu/docker-lineage-cicd
+DOCKER_IMAGE = eaf36f8f21d3
 
 .PHONY: build
 build:
