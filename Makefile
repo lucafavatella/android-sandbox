@@ -18,7 +18,6 @@ build:
 		-v "$(CURDIR)/zips:/srv/zips" \
 		-v "$(CURDIR)/local_manifests:/srv/local_manifests" \
 		$(DOCKER_IMAGE) \
-		"bash" \
 		-c "ccache -M 50G && /root/build.sh"
 
 DI = debian:stretch-slim
@@ -28,4 +27,5 @@ test:
 	docker -D -l debug pull $(DI)
 	docker -D run -t \
 		$(DI) \
+		"bash" \
 		-c "apt-get update && apt-get install -y repo"
