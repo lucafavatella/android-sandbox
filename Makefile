@@ -6,7 +6,7 @@ DOCKER_IMAGE = los-image-wip
 
 .PHONY: docker-image
 docker-image:
-	docker build -t $(DOCKER_IMAGE) $(DOCKERFILE_URL)
+	docker build -t $(DOCKER_IMAGE) "$(DOCKERFILE_URL)"
 
 .PHONY: build
 build:
