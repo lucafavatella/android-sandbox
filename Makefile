@@ -11,7 +11,7 @@ docker-image:
 .PHONY: build
 build:
 	docker -D run -t \
-		--name low-wip \
+		--name los-wip \
 		--entrypoint "/bin/sh" \
 		-e "USE_CCACHE=1" \
 		-e "BRANCH_NAME=cm-14.1" \
