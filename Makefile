@@ -1,11 +1,17 @@
 .PHONY: all
 all: build
 
-DOCKER_IMAGE = eaf36f8f21d3
+DOCKERFILE_URL = https://github.com/lucafavatella/docker-lineage-cicd.git#review-wip
+DOCKER_IMAGE = los-image-wip
+
+.PHONY: docker-image
+docker-image:
+	docker build -t $(DOCKER_IMAGE) $(DOCKERFILE_URL)
 
 .PHONY: build
 build:
 	docker -D run -t \
+		--name low-wip \
 		--entrypoint "/bin/sh" \
 		-e "USE_CCACHE=1" \
 		-e "BRANCH_NAME=cm-14.1" \
