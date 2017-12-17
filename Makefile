@@ -1,12 +1,12 @@
 .PHONY: all
 all: build
 
-DOCKERFILE_URL = https://github.com/lucafavatella/docker-lineage-cicd.git#review-wip
+DOCKERFILE_URL = https://github.com/lucafavatella/docker-lineage-cicd.git\#review-wip
 DOCKER_IMAGE = los-image-wip
 
 .PHONY: docker-image
 docker-image:
-	docker build -t $(DOCKER_IMAGE) "$(DOCKERFILE_URL)"
+	docker build -t $(DOCKER_IMAGE) $(DOCKERFILE_URL)
 
 .PHONY: build
 build:
